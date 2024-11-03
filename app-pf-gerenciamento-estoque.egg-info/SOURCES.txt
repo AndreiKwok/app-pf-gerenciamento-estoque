@@ -1,0 +1,6 @@
+pyproject.toml
+setup.py
+app-pf-gerenciamento-estoque.egg-info/PKG-INFO
+app-pf-gerenciamento-estoque.egg-info/SOURCES.txt
+app-pf-gerenciamento-estoque.egg-info/dependency_links.txt
+app-pf-gerenciamento-estoque.egg-info/top_level.txt
