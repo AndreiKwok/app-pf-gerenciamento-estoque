@@ -208,7 +208,7 @@ class ColletionRepository:
                 print(f"Product deleted successfully with ID: {self.__id}")
                 return {"code": 200, "status": f"Product deleted successfully with ID: {self.__id}"}
             else:
-                return {"code": 403, "description": f"Product not found with ID: {self.__id}"}
+                return {"code": 403, "description": f"Product not found with sucess", "id": f"{self.__id}"}
         
         except Exception as e:
             self.__log.errorMessage(f'code: 500 {e}', 'ERROR')  # Log any errors

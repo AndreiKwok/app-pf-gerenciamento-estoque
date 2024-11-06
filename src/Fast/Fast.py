@@ -63,8 +63,24 @@ async def insert():
 async def insert_unique_value(): 
     try:
         # Call the method to update a unique field into the database
-        response = await resp.get_query_alter_product_value("Galaxy S500","name_product","G S55")
+        response = await resp.get_query_alter_product_value("Galaxy S24 Ultra","name_product","Galaxy S25 Ultra")
         return {"message": f"{response}"}  # Return a success message
+    
+    except Exception as e:  # Catch any exception that occurs
+        log.errorMessage(e, 'ERROR')  # Log the error message
+        return {"ERROR": f"An error occurred while processing the request: {str(e)}"}  # Return an error message
+
+@router.get("/item/delete_item")  # Define a GET endpoint for inserting a new item
+async def delete_product(): 
+    id = []
+    try:
+        # response = list(map(lambda x: await resp.delete_product(x), range(10)))
+        # Call the method to delete product into the database
+        for i in range(1):
+            response = await resp.delete_product(i)
+            resp_id = response["id"]
+            id.append(resp_id)
+        return {"message": f"{response["description"]}, id(s): {id}"}  # Return a success message
     
     except Exception as e:  # Catch any exception that occurs
         log.errorMessage(e, 'ERROR')  # Log the error message

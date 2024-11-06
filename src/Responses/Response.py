@@ -70,8 +70,21 @@ class Response:
         #     self.__log.errorMessage(e, 'ERROR')  # Log any errors that occur
 
     async def get_query_alter_product_value(self,target_product:str = None,field:str = None, value:str | int | float = None):
-        """This method alter the field as name_product, qtd, price, type, soldout"""
+        """This method alter the field as name_product, qtd, price, type, soldout you should use 
+        "name_product" for alter the value of name product
+        "qtd" for alter the value of quantity product
+        "price_product for alter the value of price product
+        "product_type" for alter the value of type product
+        "product_soldout" for alter the value of soldout product"""
         self._collection._get_collection()  # Ensure the collection is accessible      
-        self._response = await self._collection.alter_product_value(target_product, field, value)  # Fetch the response from the buy_item method
-        return self._response  # Return the purchase response
+        self._response = await self._collection.alter_product_value(target_product, field, value)  # Fetch the response from the alter method
+        return self._response  # Return the  response
     
+    async def delete_product(self, id: int = None, product: str = None):
+        """ This method realize the delete of items in db, you should use id or the product name to delete """
+        self._collection._get_collection()  # Ensure the collection is accessible      
+        self._response = await self._collection.delete_product(id, product)  # Fetch the response from the delete item method
+        return self._response  # Return the  response
+    
+   
+        
