@@ -1,5 +1,5 @@
 {
-    "URI": "YOUR_URI",
-    "DB_NAME": "YOUR_DB_NAME",
-    "COLLECTION": "YOUR_COLLECTION"
+    "URI": "mongodb+srv://AndreiKwok:DevOpsEC2024@cluster0.x8844.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+    "DB_NAME": "StockControl",
+    "COLLECTION": "DevOps-StockControl"
 }
