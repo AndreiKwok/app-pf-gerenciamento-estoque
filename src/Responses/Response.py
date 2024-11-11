@@ -14,7 +14,7 @@ class Response:
             'Response Logger'
         )
 
-    async def get_query_lest_id(self):
+    async def get_query_last_id(self):
         """
         Asynchronously retrieves the last inserted ID from the collection.
         """

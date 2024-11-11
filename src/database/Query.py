@@ -177,6 +177,7 @@ class ColletionRepository:
                     return {
                         "code": 200, 
                         "bought_item": [{
+                            "stock_id":self.__id,
                             "product_name": self.__product_name,
                             "qtd": qtd_db,
                             "price_product": self.__price_product,
@@ -206,7 +207,7 @@ class ColletionRepository:
 
             if result.deleted_count > 0:
                 print(f"Product deleted successfully with ID: {self.__id}")
-                return {"code": 200, "status": f"Product deleted successfully with ID: {self.__id}"}
+                return {"code": 200, "description": f"Product deleted successfully", "id": f"{self.__id}"}
             else:
                 return {"code": 403, "description": f"Product not found with sucess", "id": f"{self.__id}"}
         
